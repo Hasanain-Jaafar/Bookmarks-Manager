@@ -55,7 +55,6 @@ function displayBookmarks() {
   for (const category in allBookmarks) {
     // console.log(category);
     const categoryBookmarks = allBookmarks[category];
-    // console.log(categoryBookmarks);
     categoryBookmarks.forEach((bookmark, index) => {
       const bookmarkElement = document.createElement("div");
       bookmarkElement.innerHTML = `
