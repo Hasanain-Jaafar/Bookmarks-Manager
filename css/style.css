@@ -1,0 +1,210 @@
+:root {
+  --primary: #e93629;
+  --primary-hover: #d1843c;
+  --body-bg-clr: #edededa6;
+  --section-bg-clr1: #ddd;
+  --input-border: #aaa;
+  --shadow-clr: rgba(211, 211, 211, 0.62);
+  --shadow-style: 0 0 4px var(--shadow-clr);
+}
+
+body {
+  background-color: var(--body-bg-clr);
+}
+.container {
+  padding-inline: 15px;
+  margin: auto;
+  max-width: 900px;
+}
+h1 {
+  padding: 20px;
+  margin: 0 0 20px;
+  background-color: #fff;
+  text-align: center;
+}
+h2 {
+  text-align: center;
+}
+form {
+  padding: 20px;
+  background-color: white;
+  border-radius: 6px;
+  text-align: center;
+  border: 1.5px solid var(--input-border);
+}
+form h2 {
+  margin: 0 0 15px;
+}
+form input {
+  width: 100%;
+  padding: 10px;
+  margin: 15px 0;
+  border: 1px solid var(--section-bg-clr1);
+  border-radius: 6px;
+  background-color: #f6f6f6;
+}
+form input:focus {
+  outline: none;
+  border: 1.5px solid var(--input-border);
+}
+.category-suggestions {
+  background-color: var(--section-bg-clr1);
+  padding: 20px;
+}
+.category-suggestions h4 {
+  margin: 0;
+  color: #444;
+  font-weight: normal;
+  line-height: 1.8;
+}
+.category-suggestions div,
+.category-button div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 0.6rem;
+}
+.category-suggestions span {
+  color: var(--primary);
+  font-weight: bold;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 300ms ease;
+  border: 1px solid var(--input-border);
+  padding: 3px 8px;
+  line-height: 2ch;
+  border-radius: 4px;
+  background-color: white;
+}
+form button {
+  min-width: 30%;
+  padding: 8px 15px;
+  margin-block: 10px;
+  margin-left: auto;
+  display: flex;
+  justify-content: center;
+  border: none;
+  border-radius: 6px;
+  background-color: var(--primary);
+  color: white;
+  cursor: pointer;
+  font-size: clamp(1.2rem, 1.5vw, 2rem);
+  transition: 0.3s;
+  box-shadow: 0 0 4px rgba(46, 46, 46, 0.514);
+}
+form button:hover{
+  background-color: var(--primary-hover);
+}
+h2.all {
+  cursor: pointer;
+  transition: 0.3s;
+  width: fit-content;
+  padding-inline: 2vw;
+  margin: 1rem auto;
+  font-size: clamp(1rem, 1.2vw, 2rem);
+  border-radius: 4px;
+  background-color: var(--primary);
+  color: rgb(233, 233, 233);
+  font-weight: 400;
+  letter-spacing: 1px;
+}
+h2.all:hover {
+  background-color: var(--primary-hover);
+}
+.category-button {
+  background-color: var(--section-bg-clr1);
+  padding: 20px;
+  margin: 20px auto;
+  line-height: 1.8;
+  text-align: center;
+  border: 1px solid var(--input-border);
+}
+.category-button h4 {
+  margin: 0;
+  color: #444;
+  font-weight: normal;
+  line-height: 1.8;
+}
+.category-button div span {
+  padding-inline: 10px;
+  padding-top: 3px;
+  padding-bottom: 2px;
+  background-color: #eee;
+  border-radius: 6px;
+  cursor: pointer;
+  border: 1px solid var(--input-border);
+  line-height: 2ch;
+  transition: 0.3s;
+}
+.category-button div span:hover,
+.category-button div span.active {
+  background-color: var(--primary-hover);
+  color: white;
+}
+.bookmarks {
+  margin-bottom: 2rem;
+}
+.bookmarks > div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  margin: 10px 0;
+  background-color: white;
+  padding: 20px;
+  border-radius: 6px;
+  box-shadow: var(--shadow-style);
+}
+.bookmarks div .number {
+  background-color: var(--section-bg-clr1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  margin: 0;
+  box-shadow: var(--shadow-style);
+  border: 1px solid var(--input-border);
+  border-radius: 50%;
+}
+.bookmarks div .cat {
+  width: 120px;
+  background-color: #eee;
+  padding: 4px 16px;
+  line-height: 2ch;
+  text-align: center;
+  border-radius: 6px;
+  margin-right: 15px;
+  box-shadow: var(--shadow-style);
+  border: 1px solid var(--input-border);
+}
+.bookmarks div .link {
+  flex: 1;
+}
+.bookmarks div .link a {
+  text-decoration: none;
+  color: rgb(66, 178, 248);
+  transition: 0.3s;
+  font-weight: bold;
+}
+.bookmarks div .link a:hover {
+  color: var(--primary-hover);
+}
+.bookmarks div button {
+  background-color: var(--primary);
+  font-weight: 500;
+  color: white;
+  padding: 4px 16px;
+  text-align: center;
+  border-radius: 6px;
+  box-shadow: var(--shadow-style);
+  border: none;
+  line-height: 2ch;
+  transition: 0.3s;
+}
+.bookmarks div button:hover {
+  background-color: var(--primary-hover);
+}
