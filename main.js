@@ -1,16 +1,11 @@
-// DOM SELECTORS
-//
-// >=====================>>
+// >========== DOM SELECTORS ===========>>
 const bookmarksContainer = document.querySelector(".bookmarks");
-const categorySuggestionsContainer = document.querySelector(
-  ".category-suggestions div"
-);
+const categorySuggestionsContainer = document.querySelector(".-suggestions div");
 const categoryButtonsContainer = document.querySelector(".category-button div");
 const categoryInput = document.querySelector(".category");
 const showAll = document.querySelector(".all");
 //
 // <<=======================================================<<
-//
 //
 localStorage.removeItem("active-category");
 
@@ -23,6 +18,7 @@ showAll.addEventListener("click", function () {
   categoryButtons.forEach((button) => button.classList.remove("active"));
   localStorage.removeItem("active-category");
 });
+// 
 // FUNCTION >=========>>|||>SAVE BOOKMARKS<||| <<========<
 function saveBookMark() {
   const title = document.querySelector(".title").value.trim();
@@ -50,7 +46,7 @@ function saveBookMark() {
   //  ----------Display Buttons------>>-----
   displayCategoryButtons();
 }
-// FUNCTION >=========>>|||>DISPLAY BOOKMARKS<||| <<========<
+// FUNCTION >=========>>|||> DISPLAY BOOKMARKS <|||<========<<
 function displayBookmarks() {
 
   bookmarksContainer.innerHTML = " ";
