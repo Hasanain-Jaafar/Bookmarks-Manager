@@ -21,6 +21,7 @@ showAll.addEventListener("click", function () {
   );
   localStorage.removeItem("active-category");
   categoryButtons.forEach((button) => button.classList.remove("active"));
+  localStorage.removeItem("active-category");
 });
 // FUNCTION >=========>>|||>SAVE BOOKMARKS<||| <<========<
 function saveBookMark() {
@@ -29,6 +30,7 @@ function saveBookMark() {
   const category = document.querySelector(".category").value.trim();
   if (!title || !url || !category) {
     alert("Please fill all fields ");
+    return;
   }
 
   const allBookmarks = JSON.parse(localStorage.getItem("bookmarks")) || {};
@@ -50,10 +52,12 @@ function saveBookMark() {
 }
 // FUNCTION >=========>>|||>DISPLAY BOOKMARKS<||| <<========<
 function displayBookmarks() {
-  bookmarksContainer.innerHTML = "";
+
+  bookmarksContainer.innerHTML = " ";
+
   const allBookmarks = JSON.parse(localStorage.getItem("bookmarks")) || {};
+  
   for (const category in allBookmarks) {
-    // console.log(category);
     const categoryBookmarks = allBookmarks[category];
     categoryBookmarks.forEach((bookmark, index) => {
       const bookmarkElement = document.createElement("div");
@@ -140,22 +144,20 @@ function displayCategoryButtons() {
 // FUNCTION >==============>>|||>DELETE BOOKMARK<||| <<=============<
 function deleteBookmark(category, index) {
   const allBookmarks = JSON.parse(localStorage.getItem("bookmarks")) || {};
-  allBookmarks[category].splice(index,1);
+  allBookmarks[category].splice(index, 1);
   // if the category is empty, remove the category
-  if(allBookmarks[category].length === 0) delete allBookmarks[category];
-  localStorage.setItem("bookmarks",JSON.stringify(allBookmarks));
+  if (allBookmarks[category].length === 0) delete allBookmarks[category];
+  localStorage.setItem("bookmarks", JSON.stringify(allBookmarks));
 
   if (allBookmarks[category] && localStorage.getItem("active-category")) {
     filterBookmarksByCategory(category);
-  }else{
+  } else {
     displayBookmarks();
   }
 
   displayCategorySuggestion();
   displayCategoryButtons();
 }
-//
-//
 // ||> Show Bookmarks
 displayBookmarks();
 // ----<>----
